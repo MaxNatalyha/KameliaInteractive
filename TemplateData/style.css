@@ -43,26 +43,29 @@ body {
     text-align: center;
 }
 #unity-logo img {
-    max-width: 80%;
+    max-width: 100%;
 }
 #unity-progress-bar-empty {
-    width: 80%;
-    height: 24px;
+    width: 50%;
+    height: 25px;
     margin: 10px 20px 20px 10px;
     text-align: left;
-    border: 1px solid white;
-    padding: 2px;
+    /*border: 1px solid white;
+    padding: 2px;*/
+    background: orange;
+    border-radius: 25px;
 }
 #unity-progress-bar-full {
-    width: 0%;
+    width: 33%;
     height: 100%;
-    background: white;
+    background: black;
+    border-radius: 25px;
 }
 .light #unity-progress-bar-empty {
-    border-color: black;
+    border-color: orange;
 }
 .light #unity-progress-bar-full {
-    background: black;
+    background: orange;
 }
 
 #unity-fullscreen-button {
