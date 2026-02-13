@@ -61,7 +61,7 @@ body {
     border-radius: 25px;
 }
 .light #unity-progress-bar-empty {
-    border-color: orange;
+    border-color: white;
 }
 .light #unity-progress-bar-full {
     background: orange;
