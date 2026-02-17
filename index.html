@@ -27,9 +27,9 @@
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/builds.loader.js";
       const config = {
-        dataUrl: buildUrl + "/builds.data",
-        frameworkUrl: buildUrl + "/builds.framework.js",
-        codeUrl: buildUrl + "/builds.wasm",
+        dataUrl: buildUrl + "/builds.data.unityweb",
+        frameworkUrl: buildUrl + "/builds.framework.js.unityweb",
+        codeUrl: buildUrl + "/builds.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Max_Co",
         productName: "ArchARDemo",
@@ -41,8 +41,6 @@
       const loadingCover = document.querySelector("#loading-cover");
       const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
       const progressBarFull = document.querySelector("#unity-progress-bar-full");
-      const fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      const spinner = document.querySelector('.spinner');
 
       const canFullscreen = (function() {
         for (const key of [
@@ -69,19 +67,10 @@
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-          spinner.style.display = "none";
           progressBarEmpty.style.display = "";
           progressBarFull.style.width = `${100 * progress}%`;
-        }).then((unityInstance) => {
+        }).then(() => {
           loadingCover.style.display = "none";
-          if (canFullscreen) {
-            if (!hideFullScreenButton) {
-              fullscreenButton.style.display = "";
-            }
-            fullscreenButton.onclick = () => {
-              unityInstance.SetFullscreen(1);
-            };
-          }
         }).catch((message) => {
           alert(message);
         });
